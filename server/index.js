@@ -20,6 +20,9 @@ mongoose.connect(config.mongoURI, { useNewUrlParser: true, useUnifiedTopology: t
     .catch((err) => console.log("err.."));
 
 app.get("/", function (req, res) { res.send("hello world"); });
+app.get("/api/hello", (req, res) => {
+    res.send('도착도착')
+})
 
 app.post('/api/users/register', (req, res) => {
     const user = new User(req.body);
