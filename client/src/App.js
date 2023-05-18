@@ -10,7 +10,6 @@ function App() {
   return (
     <BrowserRouter>
       <div>
-        dfdd
         <Routes>
           <Route exact path="/" element={LandingPage()}/>
           <Route exact path="/login" element={LoginPage()}/>

@@ -17,7 +17,7 @@ app.use(cookieParser());
 mongoose.set("strictQuery", false);
 mongoose.connect(config.mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log("mongoDB connected"))
-    .catch((err) => console.log("err.."));
+    .catch((err) => console.log(err));
 
 app.get("/", function (req, res) { res.send("hello world"); });
 app.get("/api/hello", (req, res) => {
