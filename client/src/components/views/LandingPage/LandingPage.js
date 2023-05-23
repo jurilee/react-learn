@@ -25,6 +25,7 @@ function LandingPage() {
             width: '100%', height:'100vh'
         }}>
             LandingPage
+            <br />
             <button onClick={onClickHandler}>
                 LogOut
             </button>
@@ -32,4 +33,4 @@ function LandingPage() {
     )
 }
 
-export default LandingPage
+export default LandingPage;

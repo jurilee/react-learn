@@ -62,9 +62,9 @@ app.get('/api/users/auth', auth, (req, res) => {
         isAdmin: req.user.role === 0 ? false : true, //role = 0 normal user/ role != admin user
         isAuth: true,
         email: req.user.email,
-        name: req.uesr.name.name,
+        name: req.user.name,
         role: req.user.role,
-        image: req.user.image
+        image: req.user.image,
     });
 });
 
