@@ -12,9 +12,9 @@ export function loginUser(dataToSubmit) {
 
 export function registerUser(dataToSubmit) {
     const request = axios.post("/api/users/register", dataToSubmit)
-        .then((res) => res.data);
+        .then(res => res.data);
     return {
     type: REGISTER_USER,
-        payload: request,
+        payload: request
     };
 };
