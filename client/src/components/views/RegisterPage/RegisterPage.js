@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { registerUser } from "../../../_actions/user_actions";
 
-function RegisterPage(props) {
+function RegisterPage() {
     const dispatch = useDispatch();
     const [Email, setEmail] = useState("");
     const [Password, setPassword] = useState("");
@@ -20,6 +20,7 @@ function RegisterPage(props) {
     const onPasswordHandler = (e) => {
         setPassword(e.currentTarget.value);
     };
+
     const onComfimPassword = (e) => {
         setComfimPassword(e.currentTarget.value);
     };
@@ -38,8 +39,10 @@ function RegisterPage(props) {
         }
 
         dispatch(registerUser(body)).then(res => {
-                if (res.payLoad.success) {
-                    props.history.push("/login");
+            console.log(res.payload);
+                if (res.payload.sucess) {
+                  //   props.history.push("/login");
+                    window.location.href = "/login";
                 } else {
                     alert("failed to sign up");
                 }

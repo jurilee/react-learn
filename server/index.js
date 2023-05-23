@@ -25,11 +25,11 @@ app.get("/api/hello", (req, res) => {
 })
 
 app.post('/api/users/register', (req, res) => {
-    const _user = new User(req.body);
-    _user.save((err, userInfo) => {
-        if (err) return res.json({ success: false, err });
+    const user = new User(req.body);
+    user.save((err, userInfo) => {
+        if (err) return res.json({ sucess: false, err });
         return res.status(200).json({
-            success: true
+        sucess: true,
         });
     });
 });
@@ -68,13 +68,13 @@ app.get('/api/users/auth', auth, (req, res) => {
     });
 });
 
-app.get(`api/users/logout`, auth, (req, res) => {
+app.get('/api/users/logout', auth, (req, res) => {
     User.findOneAndUpdate({ _id: req.user._id },
         { token: "" },
         (err, user) => {
             if (err) return res.json({ success: false, err });
             return res.status(200).send({
-                success: true
+            sucess: true,
             });
         });
 });

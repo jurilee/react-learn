@@ -7,11 +7,12 @@ function LandingPage() {
         .then(response => console.log(response))
     }, [])
 
-    const onClickHandler = (props) => {
-      axios.get(`/api/users/logout`).then((res) => {
+    const onClickHandler = () => {
+      axios.get('/api/users/logout').then((res) => {
         console.log(res.data);
-        if (res.data.success) {
-          props.history.push("/login");
+        if (res.data.sucess) {
+          // props.history.push("/login");
+          window.location.href = "/login";
         } else {
           alert("failed to logout");
         }

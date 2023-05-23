@@ -22,14 +22,17 @@ function LoginPage(props) {
             password: Password
         }
 
-        dispatch(loginUser(body)
+
+        dispatch(loginUser(body))
             .then(res => {
-                if (res.payLoad.loginSuccess) {
-                props.history.push('/')
+                console.log(res.payload);
+                if (res.payload.loginSucess) {
+                //   props.history.push("/");
+                    window.location.href = "/";
                 } else {
-                    alert('error')
-            }
-        }))
+                  alert("error");
+                }
+        })
     };
 
     return (
@@ -52,3 +55,4 @@ function LoginPage(props) {
 }
 
 export default LoginPage;
+
